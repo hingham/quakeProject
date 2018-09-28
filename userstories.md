@@ -8,7 +8,7 @@ and how earthquakes happen. <br>
  - As a potential property owner, I want know what areas are at risk of earthquakes so that I can make informed choices and be prepared. 
  
  
-** Site Owner**
+**Site Owner**
 
 
 - As the site owner, I want to be able to add new earthquake data and update current earthquake data.
@@ -16,7 +16,7 @@ and how earthquakes happen. <br>
  - As the site owner, I want to provide external links to help users find additional information related to earthquakes
  
  
-** Developer **
+**Developer**
 
 
 - As a developer, I want to create a simple interface with which users can easily interact.
@@ -26,7 +26,7 @@ data and update requests.
 - As a developer, I want to create and hold local data and be able to display the data to users. <br>
 
 
-** Stretch Goals**
+**Stretch Goals**
 
 
 - As a user want to be able to search for earthquakes based on certain characterisitics (magnitude & faultline & date & location) so that I can find the earthquake I'm looking for faster.
