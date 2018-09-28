@@ -34,3 +34,4 @@ data and update requests.
 - As the site owner, I want to be able to allow users to update quake data, pending adminstrative review. 
 - As a user I want to be able to contribute new information about earthquake data so that I can help build a good database.    - As a site owner I want to be able to offer users a choice to search for other natural disasters.
 - As the site owner, I would like to find a way to make money on my site via donations.
+- API for live earthquake data.
