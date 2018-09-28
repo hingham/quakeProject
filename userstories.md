@@ -1,5 +1,5 @@
-<strong> MVP </strong> 
- <strong> User Story </strong> 
+<strong> MVP </strong> <br>
+ <strong> User Story </strong> <br>
 As a curious citizen, I want be able to view earthquakes <br> so that I can learn about where earthquakes happen. 
  As a student, I want be able to learn about one or more earthquakes so that I can add to my knowledge of where <br>
 and how earthquakes happen. <br>
