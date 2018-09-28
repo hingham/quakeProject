@@ -1,7 +1,9 @@
-<strong> MVP </strong> <br>
- <strong> User Story </strong> <br>
-As a curious citizen, I want be able to view earthquakes <br> so that I can learn about where earthquakes happen. 
- As a student, I want be able to learn about one or more earthquakes so that I can add to my knowledge of where <br>
+**MVP**
+
+**User Story**
+
+- As a curious citizen, I want be able to view earthquakes <br> so that I can learn about where earthquakes happen. 
+- As a student, I want be able to learn about one or more earthquakes so that I can add to my knowledge of where <br>
 and how earthquakes happen. <br>
  As a potential property owner, I want know what areas are at risk of earthquakes so that I can make informed choices and be prepared. <br>
  <strong> Site Owner </strong><br>
