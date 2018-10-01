@@ -6,9 +6,9 @@ var magRange = [0, 40];
 var quakesInCountry = '';
 
 var filterForm = document.getElementById('filterForm');
-filterForm.addEventListener('submit', changeMagFilter);
+filterForm.addEventListener('submit', changeFilters);
 
-function changeMagFilter() {
+function changeFilters() {
   event.preventDefault();
   var magInput = document.getElementById('filterMagnitude');
   magRange[0] = parseInt(magInput.value, 10);
@@ -17,20 +17,12 @@ function changeMagFilter() {
   window.eqfeed_callback;
 }
 
-
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 2,
     center: new google.maps.LatLng(2.8,-187.3),
     mapTypeId: 'terrain'
   });
-
-  // Create a <script> tag and set the USGS URL as the source.
-  //var script = document.createElement('script');
-  // This example uses a local copy of the GeoJSON stored at
-  // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-  //script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
-  //document.getElementsByTagName('head')[0].appendChild(script);
 
   console.log(map);
 
