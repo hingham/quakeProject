@@ -5,20 +5,21 @@
         <title>Earthquake Data</title>
         <link rel="stylesheet" href="css/reset.css"/>
         <link rel="stylesheet" href="css/style.css"/>
+        <script src=""></script>
     </head>
     <body>
-            <header>
-                <h1>Earthquake Data</h1>
-                    <nav>
-                        <a href="index.html">Home</a>
-                        <a href="links.html">Links</a>
-                        <a href="admin.html">Admin Page</a>
-                                <form action="/login page">
-                                    username: <input type="text" name="userName" value=""><br>
-                                    password: <input type="text" name="password" value=""><br>
-                                    <input type="submit" value="Submit">
-                                </form>
-                    </nav>
+        <header>
+            <h1>Earthquake Data</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="links.html">Links</a>
+                <a href="admin.html">Admin Page</a>
+                <form action="/login page">
+                    username: <input type="text" name="userName" value=""><br>
+                    password: <input type="text" name="password" value=""><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </nav>
         </header>  
 
         <main>
@@ -28,18 +29,18 @@
                     <button class="dropbtn">Magnitude</button>
                      <div class="dropdown-content">
                         <a href="#"></a>
-                        <a href="#">smallrange(1-5)
-                        <a href="#">medium(range(6-8)</a>
-                        <a href="#">largegreater than 8 </a>
+                        <a href="#">small(1-5)</a>
+                        <a href="#">medium(6-8)</a>
+                        <a href="#">enormous(8+)</a>
                     </div>
 
             </div>
-        </section>
             </section>
             <form id ="filterForm">
                 <div>
-                    <label>Magnitude<input id="filterMagnitude" type="number" name="filterMagnitude" value=""/>
+                    <label>Filter Quakes by Magnitude:<input id="filterMagnitude" type="number" name="filterMagnitude" value=""/>
                     </label>
+                    <label>Filter Quakes by Country:<input id="filterCountry" type="text" value=""/></label>
                 </div>
                 <div>
                     <input type="submit"/>
@@ -50,8 +51,12 @@
         <footer>
             &copy; 2018 Wild Quakers
         </footer>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js"></script>
+
         <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTdZpGPo-j2PgSahHh0PHbvFtEqqHxdls&callback=initMap"></script>
-                <script src="js/app.js"></script>
+        
+        <script src="js/app.js"></script>
+
 </body>
 </html>
