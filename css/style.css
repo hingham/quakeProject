@@ -1,3 +1,5 @@
+
+form{
 * {
     border: 2px solid rgb(53, 105, 156);
 }
@@ -58,6 +60,5 @@ div {
     height: 400px;
     width: auto;
 }
-  /* Optional: Makes the sample page fill the window. */
-
+  /* Optional: Makes the sample page fill the windo*/
 
