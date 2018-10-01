@@ -1,2 +1,64 @@
+
 form{
+* {
+    border: 2px solid rgb(53, 105, 156);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    height: 6em;
+}
+
+header, footer {
+    background-color: darkslategray;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+}
+
+nav {
+    border: 1px solid black;
+    font-size: 2em;
+
+}
+
+main {
+    background-color: white;
+    height: 800px;
+    text-align: center;
+}
+
+section {
+    background-color: grey;
+    height: 600px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    padding: 1em 0 1em 0;
+}
+
+footer {
+    height: 2.5em;
+    text-align: center;
+}
+
+/* cancels out map */
+div {
+    /* background-color: rgb(250, 248, 248); */
+    color: white;
+    margin: 0 auto 0 auto;
+}
+
+
+#map {
+    height: 400px;
+    width: auto;
+}
+  /* Optional: Makes the sample page fill the windo*/
 
