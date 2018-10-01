@@ -1,0 +1,28 @@
+* {
+    border: 1px dashed rgb(53, 105, 156);
+}
+
+header, footer {
+    background-color: darkslategray;
+}
+
+main {
+    background-color: white;
+    text-align: center;
+}
+
+section {
+    background-color: grey;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    padding: 1em 0 1em 0;
+}
+
+div {
+    background-color: white;
+}
+
+.map {
+    height: 400px;
+    width: 500px;
+}
