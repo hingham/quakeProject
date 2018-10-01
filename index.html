@@ -38,9 +38,8 @@
             </section>
             <form id ="filterForm">
                 <div>
-                    <label>Filter Quakes by Magnitude:<input id="filterMagnitude" type="number" name="filterMagnitude" value=""/>
-                    </label>
-                    <label>Filter Quakes by Country:<input id="filterCountry" type="text" value=""/></label>
+                    <label>Filter Quakes by Magnitude: <input id="filterMagnitude" type="number" name="filterMagnitude" value=""/></label>
+                    <label>Filter Quakes by Country: <input id="filterCountry" type="text" value=""/></label>
                 </div>
                 <div>
                     <input type="submit"/>
@@ -51,12 +50,12 @@
         <footer>
             &copy; 2018 Wild Quakers
         </footer>
-        <script src="https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js"></script>
-
+    
         <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTdZpGPo-j2PgSahHh0PHbvFtEqqHxdls&callback=initMap"></script>
         
         <script src="js/app.js"></script>
 
+        <script src="http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp"></script>
 </body>
 </html>
