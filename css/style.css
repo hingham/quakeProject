@@ -26,12 +26,13 @@ section {
     padding: 1em 0 1em 0;
 }
 
-div {
+
+/* cancels out map */
+/* div {
     background-color: rgb(250, 248, 248);
     color: white;
     margin: 0 auto 0 auto;
-}
-
+} */
 
 
 #map {
