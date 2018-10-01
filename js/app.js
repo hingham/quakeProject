@@ -12,7 +12,6 @@ function changeFilters() {
   event.preventDefault();
   var magInput = document.getElementById('filterMagnitude');
   magRange[0] = parseInt(magInput.value, 10);
-  console.log(magRange);
   initMap();
   window.eqfeed_callback;
 }
@@ -23,9 +22,7 @@ function initMap() {
     center: new google.maps.LatLng(2.8,-187.3),
     mapTypeId: 'terrain'
   });
-
-  console.log(map);
-
+  
 }
 
 //sorts throught the string
