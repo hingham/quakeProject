@@ -1,4 +1,3 @@
-
 * {
     border: 2px solid rgb(53, 105, 156);
 }
@@ -10,7 +9,7 @@ html, body {
 }
 
 header{
-    height: 15em;
+    height: 100px;
 }
 
 header, footer {
@@ -20,13 +19,31 @@ header, footer {
 h1 {
     font-size: 2em;
     text-align: center;
+    font-size: 40px;
+    color: white;
 }
 
 nav {
-    border-top: 1px solid black;
-    font-size: 2em;
-
+    font-size: 20px;
+    color: white;
 }
+  
+.navbar a {
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+.navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
 
 nav form{
     float: right;
@@ -35,102 +52,37 @@ nav form{
 
 main {
     background-color: white;
-    /* height: 40px;  */
-    text-align: center;
 }
 
-section {
+section  {
     background-color: grey;
-    /* height: 600px; */
+}
+
+#quakeData {
+    float: left;
+    border: 2px solid black;
+    color:black;
+    background-color: rgb(243, 237, 237);
+    height: 400px;
+    width: 20%;
+    padding-left: 20px;
+}
+
+#map {
+    height: 400px;
+    width: 75%;
+    border: 2px solid black;
+}
+
+form {
     text-align: center;
-    margin: 0 auto 0 auto;
-    padding: 1em 0 1em 0;
+    clear: both;
 }
 
 footer {
     height: 2.5em;
     text-align: center;
-    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 100%;
-}
-
-/* cancels out map */
-/* div { */
-    /* background-color: rgb(250, 248, 248); */
-    /* color: white;
-    margin: 0 auto 0 auto; */
-/* } */
-
-
-#map {
-    height: 400px;
-    width: auto;
-}
-  /* Optional: Makes the sample page fill the windo*/
-
-  .dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 30px;
-    font-size: 30px;
-    border: none;
-    cursor: pointer;
-    height: 100%;
-}
-div .dropdown{
-    padding: 75px;
-}
-
-.dropdown {
-    padding-left :-200px 200px;
-    position: relative;
-    /* display: inline-block; */
-    /* float: left; */
-    height: 100%;
-
-}
-h2{
-    font-size:2.5em
-}
-
-a{
-    font-size:1.5em 
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 1000px;
-    box-shadow: 0px 25px 25px 0px rgba(0,0,0,0.2);
-    width: 25px;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 10px 10px ;
-    text-decoration: none;
-    display: block;
-    padding-bottom: 5px;
-    /* float: right; */
-
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.magnitude:hover .dropbtn {
-    background-color: #3e8e41;
-}
-form {
-    margin-left:20px;
-
-}
-
-div{
-    height :100%;
-    padding-bottom: 50px;
 }
