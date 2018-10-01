@@ -1,5 +1,12 @@
+
 * {
-    border: 1px dashed rgb(53, 105, 156);
+    border: 2px solid rgb(53, 105, 156);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 header, footer {
@@ -8,21 +15,29 @@ header, footer {
 
 main {
     background-color: white;
+    height: 800px;
     text-align: center;
 }
 
 section {
     background-color: grey;
+    height: 600px;
     text-align: center;
     margin: 0 auto 0 auto;
     padding: 1em 0 1em 0;
 }
 
 div {
-    background-color: white;
+    background-color: rgb(250, 248, 248);
+    color: white;
+    margin: 0 auto 0 auto;
 }
 
-.map {
+
+
+#map {
     height: 400px;
-    width: 500px;
+    width: auto;
 }
+  /* Optional: Makes the sample page fill the window. */
+
