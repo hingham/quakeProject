@@ -9,22 +9,24 @@ var filterForm = document.getElementById('filterForm');
 filterForm.addEventListener('submit', changeMagFilter);
 
 function changeMagFilter() {
-  //event.preventDefault();
+  event.preventDefault();
+  var mapDiv = document.getElementById('map');
   var magInput = document.getElementById('filterMagnitude');
   console.log('mag filter value input by user: ' + magInput.value);
   filteredMag = parseInt(magInput.value, 10);
   console.log(filteredMag);
+  initMap();
   window.eqfeed_callback;
 }
-//** event handler */
-// if event, filteredMag = value from form;
+
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 2,
     center: new google.maps.LatLng(2.8,-187.3),
-    mapTypeId: 'terrain'
+    mapTypeId: 'terrain',
   });
+
 
   // Create a <script> tag and set the USGS URL as the source.
   var script = document.createElement('script');
@@ -34,7 +36,6 @@ function initMap() {
   document.getElementsByTagName('head')[0].appendChild(script);
 
   console.log(map);
-
 }
 
       
@@ -62,23 +63,36 @@ window.eqfeed_callback = function(results) {
   loadQuakes(results);
 }
 
+
+
 function loadQuakes (results) {
   var results = results;
-  for (var i = 0; i < results.features.length; i++) {
+
+
+  for (var i = 0; i < 10; i++) {
+
       // console.log(typeof(results.features[i].properties.place));
-      var strInput=results.features[i].properties.place;
-      if(/*filter1 && filter2 && filter3*/ filterMagnitude(results.features[i].properties.mag)) {
+      if(filterMagnitude(results.features[i].properties.mag)) {
+        var infowindow = new google.maps.InfoWindow({content: "hi"});
           var coords = results.features[i].geometry.coordinates;
+          console.log(coords);
           var latLng = new google.maps.LatLng(coords[1],coords[0]);
           var marker = new google.maps.Marker({
-              position: latLng,
-              map: map,
+              position: {lat: coords[1], lng: coords[0]},
+              map: map
           });
+          console.log(marker.position);
+          marker.addListener('click', function(){
+              infowindow.open(map, this);
+            });
+          }
       }
-    // console.log(results);
-    //localStorage.setItem("earthquakeKey", JSON.stringify(results));
+    console.log(results);
   }
-}
+
+
+
+
 
 
 function filterMagnitude(quakeMag) {
