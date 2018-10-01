@@ -8,8 +8,23 @@ html, body {
     padding: 0;
 }
 
+header{
+    height: 6em;
+}
+
 header, footer {
     background-color: darkslategray;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+}
+
+nav {
+    border: 1px solid black;
+    font-size: 2em;
+
 }
 
 main {
@@ -26,13 +41,17 @@ section {
     padding: 1em 0 1em 0;
 }
 
+footer {
+    height: 2.5em;
+    text-align: center;
+}
 
 /* cancels out map */
-/* div {
-    background-color: rgb(250, 248, 248);
+div {
+    /* background-color: rgb(250, 248, 248); */
     color: white;
     margin: 0 auto 0 auto;
-} */
+}
 
 
 #map {
