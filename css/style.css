@@ -19,13 +19,31 @@ header, footer {
 h1 {
     font-size: 2em;
     text-align: center;
+    font-size: 40px;
+    color: white;
 }
 
 nav {
-    border-top: 1px solid black;
     font-size: 20px;
     color: white;
 }
+  
+.navbar a {
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+.navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
 
 nav form{
     float: right;
