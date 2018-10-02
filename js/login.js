@@ -4,8 +4,8 @@ var loggedIn = false;
 
 function validate()
 {
-  var userName = document.getElementById('userName').value;
-  var password = document.getElementById('password').value;
+  var userName = ''// document.getElementById('userName').value;
+  var password = ''//document.getElementById('password').value;
 
   if ( userName === 'admin' && password === 'admin')
   {
