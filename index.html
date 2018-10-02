@@ -7,88 +7,66 @@
         <script src=""></script>
     </head>
     <body>
-
             <header>
-                <h1>Earthquake Data</h1>
-                
+                <h1>Earthquake Data</h1>                
                     <nav>
                         <a href="index.html">Home</a>
                         <a href="links.html">Links</a>
-                        <a href="admin.html">Admin Page</a>
-                                <form action="/login page">
-                                    username: <input type="text" name="userName" value=""><br>
-                                    password: <input type="text" name="password" value=""><br>
-                                    <input type="submit" value="Submit">
-                                </form>
-                    </nav>
-                      <form> 
-                               <output type="text" name="Live Feed " placeholder="live Feed "> 
-                           </form>
-
-                    </header>         
-                <main>
+                        <a href="admin-login-form.html">Admin login</a>
+                         </nav>
+                              <div class="livefeed"> <p>livefeed earthquake update news</p>                               
+                               
+                            </div>
+                    </header>  
+            <main>   
             <section>
-                <div id="map"></div>
+            <div id="map"></div>
+            <aside class="left-aside">
+                <div>
+                        <p>Name</p>
+                        <p>Location</p>
+                        <p>Magnitude</p>
+                        <p>Other Data 1</p>
+                        <p>Other Data 2</p>
+                        <p>Other Data 3</p>
+                </div>
+                    
+            </aside>
+            <aside class="right-aside">            
             <div class="dropdown">
-                    <button class="dropbtn">Magnitude</button>
-                     <div class="dropdown-content">
-                        <a href="#"></a>
-                        <a href="#">smallrange(1-5)
-                        <a href="#">medium(range(6-8)</a>
-                        <a href="#">largegreater than 8 </a>
+                    <button onclick="showDropDown()" class="dropbtn">Magnitude</button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="#">smallrange(1-5)</a>
+                      <a href="#">medium(range(6-8)</a>
+                      <a href="#">largegreater than 8</a>
                     </div>
-
-
-
-            </div>
+                  </div>
+            </aside>
         </section>
-
-        <header>
-            <h1>Earthquake Data</h1>
-            <nav class="navbar">
-                <a href="index.html">Home</a>
-                <a href="links.html">Links</a>
-                <a href="admin.html">Admin Page</a>
-                <form action="/login page">
-                    <input type="text" name="userName" placeholder="username" value=""><br>
-                    <input type="password" name="password" placeholder="password" value=""><br>
-                    <input type="submit" value="Submit">
-                </form>
-            </nav>
-        </header>  
-        <main>
-            <section id="quakeData" class="inline">
-                <p>Name</p>
-                <p>Location</p>
-                <p>Magnitude</p>
-                <p>Other Data 1</p>
-                <p>Other Data 2</p>
-                <p>Other Data 3</p>
-
-            </section>
-                <div id="map"></div>
             <section>
-            <form id ="filterForm">
-                <div>
-                    <label>Filter Quakes by Magnitude: <input id="filterMagnitude" type="number" name="filterMagnitude" value=""/></label>
-                    <label>Filter Quakes by Country: <input id="filterCountry" type="text" value=""/></label>
-                </div>
-                <div>
-                    <input type="submit"/>
-                </div>
-            </form>
-        </main>
-        <footer>
-            &copy; 2018 Wild Quakers
-        </footer>
-        <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTdZpGPo-j2PgSahHh0PHbvFtEqqHxdls&callback=initMap"></script>
-
-                <script src="js/app.js"></script>
-
+                    <div class="filter">
+                            <form id ="filterForm">
+                            <div>
+                                <label>Filter Quakes by Magnitude: <input id="filterMagnitude" type="number" name="filterMagnitude" value=""/></label>
+                                <br>
+                                <label>Filter Quakes by Country : <input id="filterCountry" type="text" value=""/></label>
+                            </div>
+                            <div>
+                                <input type="submit"/>
+                            </div>
+                        </form>
+                            </div>
+            </section>             
+            
+        </main>          
+                <footer>
+                       <p>&copy; 2018 Wild Quakers</p> 
+                    </footer>  
+                    <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTdZpGPo-j2PgSahHh0PHbvFtEqqHxdls&callback=initMap"></script>
+                    
+                            <script src="js/app.js"></script>
+                            <script src="js/app.js"></script>
+                            <script src="http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp"></script>        
 </body>
-        <script src="js/app.js"></script>
-        <script src="http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp"></script>
-    </body>
-
 </html>
