@@ -1,4 +1,17 @@
-'use strict'
+'use strict';
+
+function addElement(element, content, parent) {
+  var newElement = document.createElement(element);
+  var newContent = document.createTextNode(content);
+  newElement.appendChild(newContent);
+  parent.appendChild(newElement);
+  return newElement;
+}
+
+var quakeInfo = document.getElementById('quakeData');
+var quakes = localStorage.getItem('mapQuakes');
+var earthquakeInfo = JSON.parse(quakes);
+
 
 var map;
 
@@ -23,35 +36,52 @@ function initMap() {
     zoom: 2,
     center: new google.maps.LatLng(2.8,-187.3),
     mapTypeId: 'terrain'
-  });
-
-  
+  }); 
 }
 
 
 window.eqfeed_callback = function(results) { 
-  console.log('entered eqfeed_callback');
   localStorage.setItem('mapQuakes', JSON.stringify(results));
   loadQuakes(JSON.parse(localStorage.getItem('mapQuakes')));
+};
+
+function placeMarkerAndPanTo(latLng, map) {
+  var marker = new google.maps.Marker({
+    position: latLng,
+    map: map
+  });
+  map.panTo(latLng);
 }
 
+
+
 function loadQuakes (results) {
-  var results = results;
-  console.log("loaded quakes");
-  
+  //var results = results;
   for (var i = 0; i < results.features.length; i++) {
     if(filterMagnitude(results.features[i].properties.mag)) {
       var coords = results.features[i].geometry.coordinates;
-      console.log('loading feature');
+
       var latLng = new google.maps.LatLng(coords[1],coords[0]);
       var marker = new google.maps.Marker({
-          position: {lat: coords[1], lng: coords[0]},
-          map: map,
-          icon: getIcon(results.features[i].properties.mag)
+        position: {lat: coords[1], lng: coords[0]},
+        map: map,
+        icon: getIcon(results.features[i].properties.mag)
+      });
+      marker.informationIndex = i;
+      marker.addListener('click', function(e) {
+        quakeInfo.innerHTML = '';
+        var eqGeo = earthquakeInfo.features[this.informationIndex].geometry;
+        var eqProp = earthquakeInfo.features[this.informationIndex].properties;
+        console.log('eq: ' + eqGeo.coordinates);
+        addElement('li', "Coodinate Location: "+ eqGeo.coordinates, quakeInfo);
+        addElement('li', "Magnitude: " + eqProp.mag, quakeInfo);
+        addElement('li', "Place: "+ eqProp.place, quakeInfo);
+        //console.log(earthquakeInfo.features[this.informationIndex]);
       });
     }
   }
 }
+
 
 // marker.addListener('click', function(){
 //     infowindow.setContent(this.properties.mag);
@@ -90,26 +120,4 @@ function filterCountry(country) {
     willShow = false;
   }
   return willShow;
-}
-
-//dorpdown
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function showDropDown() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-if (!event.target.matches('.dropbtn')) {
-
-  var dropdowns = document.getElementsByClassName("dropdown-content");
-  var i;
-  for (i = 0; i < dropdowns.length; i++) {
-    var openDropdown = dropdowns[i];
-    if (openDropdown.classList.contains('show')) {
-      openDropdown.classList.remove('show');
-    }
-  }
-}
 }

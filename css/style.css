@@ -95,13 +95,14 @@ section  {
     color:black;
     background-color: rgb(243, 237, 237);
     height: 400px;
+    margin-left: 2em;
     width: 20%;
-    padding-left: 2em;
+    padding-left: 1em;
 }
 
 #map {
     height: 400px;
-    width: 75%;
+    width: 73%;
     border: 2px solid black;
 }
 
