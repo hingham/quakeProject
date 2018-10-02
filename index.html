@@ -7,6 +7,42 @@
         <script src=""></script>
     </head>
     <body>
+
+            <header>
+                <h1>Earthquake Data</h1>
+                
+                    <nav>
+                        <a href="index.html">Home</a>
+                        <a href="links.html">Links</a>
+                        <a href="admin.html">Admin Page</a>
+                                <form action="/login page">
+                                    username: <input type="text" name="userName" value=""><br>
+                                    password: <input type="text" name="password" value=""><br>
+                                    <input type="submit" value="Submit">
+                                </form>
+                    </nav>
+                      <form> 
+                               <output type="text" name="Live Feed " placeholder="live Feed "> 
+                           </form>
+
+                    </header>         
+                <main>
+            <section>
+                <div id="map"></div>
+            <div class="dropdown">
+                    <button class="dropbtn">Magnitude</button>
+                     <div class="dropdown-content">
+                        <a href="#"></a>
+                        <a href="#">smallrange(1-5)
+                        <a href="#">medium(range(6-8)</a>
+                        <a href="#">largegreater than 8 </a>
+                    </div>
+
+
+
+            </div>
+        </section>
+
         <header>
             <h1>Earthquake Data</h1>
             <nav class="navbar">
@@ -28,6 +64,7 @@
                 <p>Other Data 1</p>
                 <p>Other Data 2</p>
                 <p>Other Data 3</p>
+
             </section>
                 <div id="map"></div>
             <section>
@@ -46,7 +83,12 @@
         </footer>
         <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTdZpGPo-j2PgSahHh0PHbvFtEqqHxdls&callback=initMap"></script>
+
+                <script src="js/app.js"></script>
+
+</body>
         <script src="js/app.js"></script>
         <script src="http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp"></script>
     </body>
+
 </html>
