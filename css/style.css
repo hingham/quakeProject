@@ -64,8 +64,8 @@ section,main  {
 
 section .left-aside {
     position: absolute;
-    top: 18%;
-    height: 44.69%;
+    top: 23.5%;
+    height: 31%;
     width: 20%;
     background-color: #a2836e;
 }
@@ -80,15 +80,15 @@ section .left-aside div p{
 }
 section .right-aside{
     position: absolute;
-    top: 18%;
+    top: 23.5%;
     right: 0;
-    height: 44.69%;
+    height: 31%;
     width: 20%;
     background-color: #a2836e;
 }
 #map {
     
-    height: 650px;
+    height: 350px;
     width: 60%;
     margin: 0 auto;
     border: 2px solid black;
