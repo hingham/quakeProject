@@ -18,9 +18,18 @@ fetch(req)
     console.log(article);
     console.log('length' + article.articles.length);
 
-    var content=document.createTextNode(article.articles[0].title + ': ' + article.articles[0].description);
-    newsFeed.appendChild(content);
+
     newsLink.setAttribute('href', article.articles[0].url);
+    
+    var title = document.createElement('h3');
+    var content=document.createTextNode(article.articles[0].title);
+    title.appendChild(content);
+    newsFeed.appendChild(title);
+
+    var paragraph = document.createElement('p');
+    var description = document.createTextNode(article.articles[0].description);
+    paragraph.appendChild(description);
+    newsFeed.appendChild(paragraph);
 
 
     for( var i = 1; i < article.articles.length; i ++){
@@ -28,11 +37,19 @@ fetch(req)
         setTimeout(function() {
           console.log(article.articles[i].title);
           newsFeed.innerHTML = '';
-          var content=document.createTextNode(article.articles[i].title + ': ' + article.articles[i].description);
-          newsFeed.appendChild(content);
           newsLink.setAttribute('href', article.articles[i].url);
-          console.log(i);
+    
+          var title = document.createElement('h3');
+          var content=document.createTextNode(article.articles[i].title);
+          title.appendChild(content);
+          newsFeed.appendChild(title);
+
+          var paragraph = document.createElement('p');
+          var description = document.createTextNode(article.articles[i].description);
+          paragraph.appendChild(description);
+          newsFeed.appendChild(paragraph);
          
+
         }, 10000*i);
       })(i);
 
