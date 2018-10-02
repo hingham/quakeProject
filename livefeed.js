@@ -33,7 +33,7 @@ fetch(req)
           newsLink.setAttribute('href', article.articles[i].url);
           console.log(i);
          
-        }, 500*i);
+        }, 10000*i);
       })(i);
 
     }
