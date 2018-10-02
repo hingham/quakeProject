@@ -85,6 +85,16 @@ main {
     background-color: white;
 }
 
+
+main nav ul {
+    border: 1px solid black;
+    margin: 1em 1em 3em 1em;
+}
+
+main nav ul li{ 
+    margin: 1em;
+}
+
 section  {
     background-color: grey;
 }
