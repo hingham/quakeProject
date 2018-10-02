@@ -1,14 +1,14 @@
-* {
+/* * {
     border: 2px solid rgb(53, 105, 156);
-}
+} */
 
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-}
+} 
 
-header{
+header {
     height: 100px;
 }
 
