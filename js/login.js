@@ -1,8 +1,7 @@
 'use strict';
-var attempt = 3; //Variable to count number of attempts
+var attempt = 3; 
 var loggedIn = false;
 
-//Below function Executes on click of login button
 function validate(){
 	var userName = document.getElementById("userName").value;
 	var password = document.getElementById("password").value;
@@ -10,8 +9,8 @@ function validate(){
     if ( userName === "admin" && password == "admin")
     {
         alert ("Login successfully");
-        loggedIn = true;
-		window.location = "admin.html"; //redirecting to other page
+		loggedIn = true;
+		window.location = "admin.html";
 		return false;
 	}
     else
@@ -20,7 +19,7 @@ function validate(){
 		alert("Incorrect username / password combination.  You have left " + attempt + " attempt before you will be locked out.");
         if( attempt < 1)
         {
-			document.getElementById("username").disabled = true;
+			document.getElementById("userName").disabled = true;
 			document.getElementById("password").disabled = true;
 			document.getElementById("loginSubmit").disabled = true;
 			return false;

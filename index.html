@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Earthquake Dataa</title>
+        <title>Earthquake Data</title>
         <link rel="stylesheet" href="css/reset.css"/>
         <link rel="stylesheet" href="css/style.css"/>
+        <style type="text/css"> </style>
         <script src=""></script>
     </head>
     <body>
@@ -12,21 +13,22 @@
             <nav class="navbar">
                 <a href="index.html">Home</a>
                 <a href="links.html">Links</a>
-                <!--Need to add functionality to hide admin page if admin not logged in-->
+                <!--Need to add functionality to hide admin page if admin not logged in and show user logged in-->
                 <a href="admin.html">Admin Page</a>
                 <form action="/login page">
-                    <input type="text" id="userName" placeholder="username" value=""><br>
-                    <input type="password" id="password" placeholder="password" value=""><br>
+                    <input type="text" id="userName" placeholder="username"/><br>
+                    <input type="password" id="password" placeholder="password"/><br>
                     <!-- <button type="loginSubmit">Click to login</button> -->
                     <input type="button" value="Login" id="loginSubmit" onclick="validate()"/>
                 </form>
+                <div id="liveFeed">Loading......Earthquake News Feed Comming Soon........</div>
             </nav>
         </header>
     <main>
         <section id="quakeData" class="inline">
-            <p>Name</p>
-            <p>Location</p>
-            <p>Magnitude</p>
+            <p>Name of Event</p>
+            <p>Coordinates: </p>
+            <p>Magnitude: </p>
             <p>Other Data 1</p>
             <p>Other Data 2</p>
             <p>Other Data 3</p>
@@ -37,11 +39,10 @@
                 <div>
                     <label>Filter Quakes by Magnitude: <input id="filterMagnitude" type="number" name="filterMagnitude" value=""/></label>
                     <label>Filter Quakes by Country: <input id="filterCountry" type="text" value=""/></label>
-                </div>
-                <div>
                     <input type="submit"/>
                 </div>
             </form>
+        </section>
     </main>
     <footer>
         &copy; 2018 Wild Quakers
