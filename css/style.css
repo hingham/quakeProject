@@ -134,3 +134,23 @@ div{
     height :100%;
     padding-bottom: 50px;
 }
+ output[type=text] {
+    width: 50em;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 30px;
+    background-color: white;
+     /* background-image: url('searchicon.png'); */
+    /* background-position: 20px 20px;   */
+     /* background-repeat: no-repeat;    */
+    
+      padding: 20px 30px 20px 30px;    
+      position: fixed;
+     
+    
+  
+}
+
+output[type=text]:focus {
+    width: 200%; 
