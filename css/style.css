@@ -24,7 +24,6 @@ h1 {
     color: white;
 }
 
-
 a{
     text-decoration: none;
 }
@@ -83,6 +82,18 @@ nav form{
 
 main {
     background-color: white;
+}
+
+.picone .picthree {
+    border: 1px solid black;
+    float: left;
+    margin-left: 3em;
+}
+
+.pictwo .picfour {
+    border: 1px solid black;
+    float: right;
+    margin-right: 3em;
 }
 
 section  {
