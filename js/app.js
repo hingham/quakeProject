@@ -22,8 +22,27 @@ function initMap() {
     center: new google.maps.LatLng(2.8,-187.3),
     mapTypeId: 'terrain'
   });
-  
+
+  // map.data.setStyle(function(feature) {
+  //   var magnitude = feature.getProperty('mag');
+  //   console.log(feature);
+  //   return {
+  //     icon: getIcon(magnitude)
+  //   };
+  // });
 }
+
+// function getIcon(magnitude) {
+//   var magnitude = magnitude;
+//   return {
+//     path: google.maps.SymbolPath.CIRCLE,
+//     fillColor: 'red',
+//     fillOpacity: .2,
+//     scale: Math.pow(2, magnitude) / 2,
+//     strokeColor: 'red',
+//     strokeWeight: .5
+//   };
+// }
 
 //sorts throught the string
 window.eqfeed_callback = function(results) { 
@@ -36,20 +55,23 @@ function loadQuakes (results) {
   var results = results;
   console.log("loaded quakes");
   for (var i = 0; i < results.features.length; i++) {
-    var strInput=results.features[i].properties.place;
     if(filterMagnitude(results.features[i].properties.mag)) {
+      var infowindow = new google.maps.InfoWindow({content: "hi"});
       var coords = results.features[i].geometry.coordinates;
+      console.log(coords);
       var latLng = new google.maps.LatLng(coords[1],coords[0]);
       var marker = new google.maps.Marker({
-          position: latLng,
-          map: map,
+          position: {lat: coords[1], lng: coords[0]},
+          map: map
       });
+      console.log(marker.position);
+      marker.addListener('click', function(){
+          infowindow.open(map, this);
+        });
     }
-    // console.log(results);
-    //localStorage.setItem("earthquakeKey", JSON.stringify(results));
+  
   }
 }
-
 
 function filterMagnitude(quakeMag) {
   var willShow = true;
