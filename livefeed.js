@@ -49,7 +49,8 @@ fetch(req)
           paragraph.appendChild(description);
           newsFeed.appendChild(paragraph);
          
-        }, 1000*i);
+
+        }, 10000*i);
       })(i);
 
     }
