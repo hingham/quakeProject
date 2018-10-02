@@ -24,7 +24,6 @@ h1 {
     color: white;
 }
 
-
 a{
     text-decoration: none;
 }
@@ -85,14 +84,16 @@ main {
     background-color: white;
 }
 
-
-main nav ul {
+.picone .picthree {
     border: 1px solid black;
-    margin: 1em 1em 3em 1em;
+    float: left;
+    margin-left: 3em;
 }
 
-main nav ul li{ 
-    margin: 1em;
+.pictwo .picfour {
+    border: 1px solid black;
+    float: right;
+    margin-right: 3em;
 }
 
 section  {
