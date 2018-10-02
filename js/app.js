@@ -25,28 +25,10 @@ function initMap() {
     mapTypeId: 'terrain'
   });
 
-  // map.data.setStyle(function(feature) {
-  //   var magnitude = feature.getProperty('mag');
-  //   console.log(feature);
-  //   return {
-  //     icon: getIcon(magnitude)
-  //   };
-  // });
+  
 }
 
-// function getIcon(magnitude) {
-//   var magnitude = magnitude;
-//   return {
-//     path: google.maps.SymbolPath.CIRCLE,
-//     fillColor: 'red',
-//     fillOpacity: .2,
-//     scale: Math.pow(2, magnitude) / 2,
-//     strokeColor: 'red',
-//     strokeWeight: .5
-//   };
-// }
 
-//sorts throught the string
 window.eqfeed_callback = function(results) { 
   console.log('entered eqfeed_callback');
   localStorage.setItem('mapQuakes', JSON.stringify(results));
@@ -56,7 +38,6 @@ window.eqfeed_callback = function(results) {
 function loadQuakes (results) {
   var results = results;
   console.log("loaded quakes");
-  var infowindow = new google.maps.InfoWindow({content: "hi"});
   
   for (var i = 0; i < results.features.length; i++) {
     if(filterMagnitude(results.features[i].properties.mag)) {
@@ -65,17 +46,33 @@ function loadQuakes (results) {
       var latLng = new google.maps.LatLng(coords[1],coords[0]);
       var marker = new google.maps.Marker({
           position: {lat: coords[1], lng: coords[0]},
-          map: map
-      });
-      marker.addListener('click', function(){
-          infowindow.setContent('YUPPO');// + JSON.parse(localStorage.getItem('mapQuakes').features[i].properties.mag);
-          infowindow.open(map, this);
+          map: map,
+          icon: getIcon(results.features[i].properties.mag)
       });
     }
-  
   }
 }
 
+// marker.addListener('click', function(){
+//     infowindow.setContent(this.properties.mag);
+//     infowindow.open(map, this);
+// });
+
+function getIcon(magnitude) {
+  var magnitude = magnitude;
+  var redness = 185 + 14 * magnitude;
+  var opacity = 1 / magnitude;
+  return {
+    path: google.maps.SymbolPath.CIRCLE,
+    fillColor: 'rgb(' + redness + ', 70, 0)',
+    fillOpacity: opacity,
+    scale: Math.pow(2, magnitude) / 3,
+    strokeColor: 'red',
+    strokeWeight: .5
+  };
+}
+
+// Returns true if magnitude filter is not set, or if marker's magnitude falls within 
 function filterMagnitude(quakeMag) {
   var willShow = true;
   var quakeMag = quakeMag;
