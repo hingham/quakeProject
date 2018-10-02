@@ -6,7 +6,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-} 
+}
 
 header {
     height: 100px;
@@ -27,23 +27,23 @@ nav {
     font-size: 20px;
     color: white;
 }
-  
+
 .navbar a {
     color: #f2f2f2;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-  }
-  
+}
+
 .navbar a:hover {
     background-color: #ddd;
     color: black;
-  }
-  
+}
+
 .navbar a.active {
     background-color: #4CAF50;
     color: white;
-  }
+}
 
 nav form{
     float: right;
@@ -79,29 +79,6 @@ form {
     clear: both;
 }
 
-
-div{
-    height :100%;
-    padding-bottom: 50px;
-}
- output[type=text] {
-    width: 50em;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 30px;
-    background-color: white;
-          
-      padding: 20px 30px 20px 30px;    
-      position: fixed;
-     
-    
-  
-}
-
-output[type=text]:focus {
-    width: 200%; 
-
 footer {
     height: 2.5em;
     text-align: center;
@@ -109,4 +86,3 @@ footer {
     bottom: 0;
     width: 100%;
 }
-

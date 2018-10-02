@@ -1,62 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Earthquake Dataa</title>
-        <link rel="stylesheet" href="css/reset.css"/>
-        <link rel="stylesheet" href="css/style.css"/>
-        <script src=""></script>
-    </head>
-    <body> 
-        <header>
-            <h1>Earthquake Data</h1>
-            <nav class="navbar">
-                <a href="index.html">Home</a>
-                <a href="links.html">Links</a>
-                <a href="admin.html">Admin Page</a>
-                <form action="/login page">
-                    <input type="text" name="userName" placeholder="username" value=""><br>
-                    <input type="password" name="password" placeholder="password" value=""><br>
-                    <input type="submit" value="Submit">
-                </form>
-            </nav>
-        </header>  
-
-        <main>
-                      <form> 
-                <output type="text" name="Live Feed " placeholder="live Feed "> 
-            </form>
-            <section id="quakeData" class="inline">
-                <p>Name</p>
-                <p>Location</p>
-                <p>Magnitude</p>
-                <p>Other Data 1</p>
-                <p>Other Data 2</p>
-                <p>Other Data 3</p>
-
-            </section>
-                <div id="map"></div>
-            <section>
-            <form id ="filterForm">
-                <div>
-                    <label>Filter Quakes by Magnitude: <input id="filterMagnitude" type="number" name="filterMagnitude" value=""/></label>
-                    <label>Filter Quakes by Country: <input id="filterCountry" type="text" value=""/></label>
-                </div>
-                <div>
-                    <input type="submit"/>
-                </div>
-            </form>
-        </main>
-        <footer>
-            &copy; 2018 Wild Quakers
-        </footer>
-        <script async defer
+<head>
+    <title>Earthquake Dataa</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src=""></script>
+</head>
+<body>
+<header>
+    <h1>Earthquake Data</h1>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="links.html">Links</a>
+        <a href="admin.html">Admin Page</a>
+        <form action="/login page">
+            <input type="text" name="userName" placeholder="username" value=""><br>
+            <input type="password" name="password" placeholder="password" value=""><br>
+            <input type="submit" value="Submit">
+        </form>
+    </nav>
+</header>
+<main>
+    <section id="quakeData" class="inline">
+        <p>Name</p>
+        <p>Location</p>
+        <p>Magnitude</p>
+        <p>Other Data 1</p>
+        <p>Other Data 2</p>
+        <p>Other Data 3</p>
+    </section>
+    <div id="map"></div>
+    <section>
+        <form id ="filterForm">
+            <div>
+                <label>Filter Quakes by Magnitude: <input id="filterMagnitude" type="number" name="filterMagnitude" value=""/></label>
+                <label>Filter Quakes by Country: <input id="filterCountry" type="text" value=""/></label>
+            </div>
+            <div>
+                <input type="submit"/>
+            </div>
+        </form>
+</main>
+<footer>
+    &copy; 2018 Wild Quakers
+</footer>
+<script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTdZpGPo-j2PgSahHh0PHbvFtEqqHxdls&callback=initMap"></script>
-
-                <script src="js/app.js"></script>
-
+<script src="js/app.js"></script>
+<script src="http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp"></script>
 </body>
-        <script src="js/app.js"></script>
-        <script src="http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp"></script>
-    </body>
-
 </html>
