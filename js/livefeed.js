@@ -35,7 +35,7 @@ fetch(req)
     for( var i = 1; i < article.articles.length; i ++){
       (function(i) {
         setTimeout(function() {
-          console.log(article.articles[i].title);
+          //console.log(article.articles[i].title);
           newsFeed.innerHTML = '';
           newsLink.setAttribute('href', article.articles[i].url);
     
