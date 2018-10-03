@@ -93,9 +93,6 @@ function changeFilters() {
   
 }
 
-
-
-
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 3,
@@ -121,7 +118,6 @@ function clearMarkers() {
 
 function loadQuakes() {
   var results = JSON.parse(localStorage.getItem('mapQuakes'));
-  console.log("loaded quakes");
   for (var i = 0; i < results.features.length; i++) {
     var coords = results.features[i].geometry.coordinates;
     if(filterMagnitude(results.features[i].properties.mag) && filterLocation(coords)) {
@@ -165,15 +161,12 @@ function setBounds() {
   }
 }
 
-
-
 // Returns true if magnitude filter is not set, or if marker's magnitude falls within 
 
 function filterMagnitude(quakeMag) {
   var willShow = true;
   var quakeMag = quakeMag;
   if(quakeMag < magRange[0] || quakeMag > magRange[1]) {
-    console.log('feature excluded by mag');
     willShow = false;
   }
   return willShow;
@@ -185,7 +178,6 @@ function filterLocation(position) {
   if (searchLocation) {
     var distance = google.maps.geometry.spherical.computeDistanceBetween(locOfMarker, searchLocation) / 1609.34;
     if (distance > searchRadius) {
-      console.log('feature excluded by distance');
       willShow = false;
     }
   }
