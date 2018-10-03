@@ -143,3 +143,14 @@ footer {
     width: 100%;
 }
 
+.startHidden {
+    display: none;
+}
+
+fieldset {
+    text-align: center;
+}
+
+input {
+    margin: .5em auto .5em auto;
+}

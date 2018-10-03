@@ -14,48 +14,51 @@
                 <a href="index.html">Home</a>
                 <a href="links.html">Links</a>
                 <p id='shake' class= ""> Trigger Quake</p>
-                
             </nav>
-
         </header>
-    <main>
-            <a target="_blank" id="news-link" href=''>
-             <div id="liveFeed"></div></a>
-        <section class="inline">
-           
-        <section>
-            <h2> Markers represent recent earthquakes. Click a marker to find out more about the earthquake in that location.</h2>
-        </section>
-        </section>
-        <div id="map"></div>
-        <section>
-            <form id ="filterForm">
-                <div>
-                    <label>Filter Quakes by Magnitude: <input id="filterMagnitude" type="number" name="filterMagnitude" value="" /></label>
-                    <fieldset>  
-                        <label>Filter Quakes by Location
-                            <input id="filterLatitude" type="number" step="0.00001" placeholder ="Latitude" value="" />
-                            <input id="filterLongitude" type="number" step="0.00001" placeholder ="Longitude" value="" />
-                            <input id="filterRadius" type="number" placeholder = "Search Radius in km" value="" />
-                        </label>
-                    </fieldset>
-                    <input type="submit" value="SUBMIT OR BE DESTROYED" />
-                    <input type="reset"/>  
-                </div>
-            </form>
-        </section>
-    </main>
-    <footer>
-        &copy; 2018 Wild Quakers
-    </footer>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTdZpGPo-j2PgSahHh0PHbvFtEqqHxdls&libraries=geometry&callback=initMap">
-    </script>
-        <!-- <script src="js/sidebar.js"></script> -->
+        <main>
+          <a target="_blank" id="news-link" href=''>
+               <div id="liveFeed"></div></a>
+          <section class="inline">
 
-    <script src="js/app.js"></script>
-    <script src="http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp"></script>
-    <!-- <script src="js/login.js"></script> -->
-    <script src="js/livefeed.js"></script>
+          <section>
+              <h2> Markers represent recent earthquakes. Click a marker to find out more about the earthquake in that location.</h2>
+          </section>
+          </section>
+          <div id="map"></div>
+          <section>
+              <form id ="filterForm">
+                  <div>
+                      <label>Filter Quakes by Magnitude: <input id="filterMagnitude" type="number" step="0.1" max="9" name="filterMagnitude" value="" /></label>
+                      <label>Search Quakes by Location
+                          <fieldset>  
+                              <label>Using an Address<input type="radio" name="locSelect" id="selectAddress" onclick="javascript:locTypeCheck();"/></label>
+                              <label>Using Coordinates<input type="radio" name="locSelect" id="selectLatLng" onclick="javascript:locTypeCheck();"/></label>
+                          </fieldset>
+                      </label>
+                          <fieldset>
+                              <input id="filterLatitude" class="startHidden ltlng" type="number" step="0.00001" placeholder ="Latitude" value="" />
+                              <input id="filterLongitude" class="startHidden ltlng" type="number" step="0.00001" placeholder ="Longitude" value="" />
+                              <input id="filterAddress" class="startHidden" type="text" placeHolder="Address, City, or Country" value="" />
+                              <input id="filterRadius" class="startHidden" type="number" placeholder = "Search Radius in km" value="" />
+                          </fieldset>
+                      <input type="submit" value="SUBMIT OR BE DESTROYED" />
+                      <input type="reset"/> 
+                  </div>
+              </form>
+          </section>
+      </main>
+      <footer>
+          &copy; 2018 Wild Quakers
+      </footer>
+      <script async defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTdZpGPo-j2PgSahHh0PHbvFtEqqHxdls&libraries=geometry&callback=initMap">
+      </script>
+
+      <script src="js/app.js"></script>
+      <script src="http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp"></script>
+
+      <script src="js/livefeed.js"></script>
+
     </body>
 </html>
