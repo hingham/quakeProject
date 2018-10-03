@@ -156,6 +156,6 @@ function handleClick(event){
 }
 
 
-triggerShake.addEventListener('click', handleClick);
+// triggerShake.addEventListener('click', handleClick);
 
-handleClick();
+// handleClick();
