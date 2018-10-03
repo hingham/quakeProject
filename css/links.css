@@ -1,0 +1,18 @@
+main a{
+    display: block;
+    margin-left: 130px;
+    margin-bottom: 20px;
+    font-size: 2em;
+    width: 50%;
+   }
+   main a:link,:visited{
+      padding: 10px;
+   }
+   main a:hover{
+   background-color: black;
+   color: white;
+   }
+   main a:active{
+       background-color: blue;
+       color: red;
+   }
