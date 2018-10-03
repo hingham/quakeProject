@@ -34,7 +34,7 @@ html, body {
 
 header {
     height: 6em;
-    padding-bottom: .75em;;
+    padding-bottom: .75em;
 }
 
 header, footer {
@@ -50,6 +50,11 @@ h1 {
 
 a{
     text-decoration: none;
+    color: rgb(12, 12, 12);
+}
+
+a:hover{
+    color:  rgb(116, 116, 116);
 }
 
 p{
@@ -103,36 +108,26 @@ nav form{
 #liveFeed {
     border: 1px solid black;
     margin: 1em 2em 1em 2em;
-    background-color: rgb(184, 215, 181);
+    background-color: rgba(184, 215, 181, .5);
 }
-
-#quakeData:hover {
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-  }
 
 
 section  {
-    background-color: grey;
+    background-color: rgb(218, 218, 218);
+    margin: 0em 2em 0em 2em;
+    text-align: center;
 }
 
-#quakeData {
-    float: left;
-    border: 2px solid black;
-    color:black;
-    background-color: rgb(243, 237, 237);
-    height: 400px;
-    margin-left: 2em;
-    width: 20%;
-    padding-left: 1em;
-}
 
 #map {
-    height: 400px;
-    width: 73%;
+    margin-left: 2em;
+    height: 500px;
+    width: 95%;
     border: 2px solid black;
+}
+
+aside{
+    font-weight: bold;
 }
 
 form {
