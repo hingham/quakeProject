@@ -11,7 +11,7 @@ function stringQuakeData(n){
   '</div>' + 'GPS Coordinates: ' + '</div>' + '(' + latitude + ', ' + longitude + ')';
 }
 
-var body =document.getElementById('body');
+var body = document.getElementById('body');
 
 var triggerShake = document.getElementById('shake');
 var quakeInfo = document.getElementById('quakeData');
@@ -67,9 +67,10 @@ function changeFilters() {
     var loc = new google.maps.LatLng(latInput, longInput);
     console.log(loc);
     searchLocation = loc;
-    map.setCenter(loc);
+    map.setZoom
     searchRadius = radInput;
     reloadMap();
+    map.setCenter(loc);
   } else if (addressInput && radInput) {
     var loc;
     var test;
@@ -78,9 +79,9 @@ function changeFilters() {
         loc = results[0].geometry.location;
         test = 5;
         searchLocation = loc;
-        map.setCenter(loc);
         searchRadius = radInput;
         reloadMap();
+        map.setCenter(loc);
         return;
       } else {
         console.log('Geocoder couldn\'t find entered address');
@@ -91,9 +92,6 @@ function changeFilters() {
   }
   
 }
-
-
-
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -108,12 +106,18 @@ function initMap() {
 function reloadMap() {
   clearMarkers();
   loadQuakes();
+  setBounds();
 }
 
+function clearMarkers() {
+  for (var i=0; i<gMarkers.length; i++) {
+    gMarkers[i].setMap(null);
+  }
+  gMarkers = [];
+}
 
 function loadQuakes() {
   var results = JSON.parse(localStorage.getItem('mapQuakes'));
-  console.log("loaded quakes");
   for (var i = 0; i < results.features.length; i++) {
     var coords = results.features[i].geometry.coordinates;
     if(filterMagnitude(results.features[i].properties.mag) && filterLocation(coords)) {
@@ -146,13 +150,15 @@ function loadQuakes() {
   }
 }
 
-
-
-function clearMarkers() {
+function setBounds() {
+  var bounds = new google.maps.LatLngBounds();
   for (var i=0; i<gMarkers.length; i++) {
-    gMarkers[i].setMap(null);
+    bounds.extend(gMarkers[i].getPosition());
   }
-  gMarkers = [];
+  map.fitBounds(bounds);
+  if (map.getZoom() > 10) {
+    map.setZoom(10);
+  }
 }
 
 // Returns true if magnitude filter is not set, or if marker's magnitude falls within 
@@ -161,7 +167,6 @@ function filterMagnitude(quakeMag) {
   var willShow = true;
   var quakeMag = quakeMag;
   if(quakeMag < magRange[0] || quakeMag > magRange[1]) {
-    console.log('feature excluded by mag');
     willShow = false;
   }
   return willShow;
@@ -171,9 +176,8 @@ function filterLocation(position) {
   var willShow = true;
   var locOfMarker = new google.maps.LatLng(position[1], position[0]);
   if (searchLocation) {
-    var distance = google.maps.geometry.spherical.computeDistanceBetween(locOfMarker, searchLocation) / 1000;
+    var distance = google.maps.geometry.spherical.computeDistanceBetween(locOfMarker, searchLocation) / 1609.34;
     if (distance > searchRadius) {
-      console.log('feature excluded by distance');
       willShow = false;
     }
   }
@@ -202,8 +206,6 @@ function handleClick(event){
   event.preventDefault();
   body.setAttribute('class', 'shake');
 }
-
-
 
 window.eqfeed_callback = function(results) { 
   console.log('entered eqfeed_callback');
