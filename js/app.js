@@ -142,12 +142,12 @@ function getIcon(magnitude) {
 }
 
 
-function handleClick(event){
-  event.preventDefault();
-  body.setAttribute('class', 'shake');
-}
+// function handleClick(event){
+//   event.preventDefault();
+//   body.setAttribute('class', 'shake');
+// }
 
 
-triggerShake.addEventListener('click', handleClick);
+// triggerShake.addEventListener('click', handleClick);
 
-handleClick();
+// handleClick();
