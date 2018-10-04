@@ -37,8 +37,6 @@ header {
     padding-bottom: .75em;
 }
 
-header{
-}
 
 header, footer {
     background-color: rgb(243, 239, 239);
@@ -176,6 +174,14 @@ footer {
     display: none;
 }
 
+.submitButton {
+    background-color: rgb(187, 187, 187);
+}
+
+.submitButton:hover {
+    background-color: rgb(116, 116, 116);
+}
+
 fieldset {
     text-align: center;
 }
@@ -196,5 +202,6 @@ p{
 #reset-state{
     display: none;
 }
+
 
 

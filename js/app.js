@@ -52,13 +52,13 @@ function locTypeCheck() {
 
 function changeFilters() {
   event.preventDefault();
+  displayInval(false);
   var magInput = filtMag.value;
   var longInput = filtLng.value;
   var latInput = filtLat.value;
   var addressInput = filtAddr.value;
   var radInput = filtRad.value;
-  var invalMsg = document.getElementById("formInvalMsg");
-  invalMsg.style.display = 'none';
+  
 
   if (magInput) {
     magRange[0] = parseInt(magInput, 10);
@@ -90,14 +90,26 @@ function changeFilters() {
   } else if (!longInput && !latInput && !radInput && !addressInput) {
     reloadMap();
   } else {
+    displayInval(true);
+  }
+}
+
+function displayInval(on) {
+  var invalMsg = document.getElementById("formInvalMsg");
+  if (on) {
     filtLat.style.border = '1px solid red';
     filtLng.style.border = '1px solid red';
     filtRad.style.border = '1px solid red';
     filtAddr.style.border = '1px solid red';
     invalMsg.style.display = 'block';
     invalMsg.style.color = 'red';
+  } else {
+    filtLat.style.border = 0;
+    filtLng.style.border = 0;
+    filtRad.style.border = 0;
+    filtAddr.style.border = 0;
+    invalMsg.style.display = 'none';
   }
-  
 }
 
 function initMap() {
