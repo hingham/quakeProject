@@ -11,8 +11,8 @@ function stringQuakeData(n){
   '</div>' + 'GPS Coordinates: ' + '</div>' + '(' + latitude + ', ' + longitude + ')';
 }
 
-var body = document.getElementById('body');
 
+var body = document.getElementById('body');
 var triggerShake = document.getElementById('shake');
 var quakeInfo = document.getElementById('quakeData');
 var quakes = localStorage.getItem('mapQuakes');
@@ -132,7 +132,7 @@ function loadQuakes() {
       marker.addListener('click', function(e) {
       });
      
-      var infowindow = new google.maps.InfoWindow({
+      var info= new google.maps.InfoWindow({
         maxWidth: 250
       });
       marker.addListener('click', function() {
@@ -201,12 +201,6 @@ function getIcon(magnitude) {
 }
 
 
-
-function handleClick(event){
-  event.preventDefault();
-  body.setAttribute('class', 'shake');
-}
-
 window.eqfeed_callback = function(results) { 
   console.log('entered eqfeed_callback');
   if (!localStorage.getItem('mapQuakes')) {
@@ -217,7 +211,4 @@ window.eqfeed_callback = function(results) {
 }
 
 
-// triggerShake.addEventListener('click', handleClick);
 
-
-// handleClick();

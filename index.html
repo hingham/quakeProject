@@ -13,9 +13,19 @@
             <nav class="navbar">
                 <a href="index.html">Home</a>
                 <a href="links.html">Links</a>
-                <p id='shake' class= ""> Trigger Quake</p>
             </nav>
+
+            <div>
+            <form id="trigger-quake">
+                <label for="user-state">Enter country name or US state to learn how many earthquakes this area has experienced in the past 3 weeks: </label>
+                <input type="text" id="user-state" name="user-state">
+                <input id="submit-state" type="submit">
+                <button id="reset-state" type="submit">Reset</button>
+            </form>
+            </div>
+
         </header>
+
         <main>
           <a target="_blank" id="news-link" href=''>
                <div id="liveFeed"></div></a>
@@ -57,8 +67,7 @@
 
       <script src="js/app.js"></script>
       <script src="http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp"></script>
-
+      <script src="stateCheck.js"></script>
       <script src="js/livefeed.js"></script>
-
     </body>
 </html>
