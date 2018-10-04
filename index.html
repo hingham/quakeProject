@@ -18,9 +18,9 @@
 
             <div>
             <form id="trigger-quake">
-                    <h2>How many earthquakes happened in the last three weeks where you live?</h2>
-                    <h2>Enter a US state or country below to find out:</h2>
-                    <label for="user-state"></label>
+                <h2>How many earthquakes happened in the last three weeks where you live?</h2>
+                <h2>Enter a US state or country below to find out:</h2>
+                <label for="user-state"></label>
                 <input type="text" id="user-state" name="user-state" placeholder="State or Country">
                 <input id="submit-state" type="submit">
                 <button id="reset-state" type="submit">Reset</button>
@@ -42,22 +42,23 @@
           <section>
               <form id ="filterForm">
                   <div>
-                      <label>Filter Quakes by Magnitude: <input id="filterMagnitude" type="number" step="0.1" max="9" name="filterMagnitude" value="" /></label>
-                      <label>Search Quakes by Location
-                          <fieldset>  
-                              <label>Using an Address<input type="radio" name="locSelect" id="selectAddress" onclick="javascript:locTypeCheck();"/></label>
-                              <label>Using Coordinates<input type="radio" name="locSelect" id="selectLatLng" onclick="javascript:locTypeCheck();"/></label>
-                          </fieldset>
-                      </label>
-                          <fieldset>
-                            <h5 id="formInvalMsg" class="startHidden">Please enter both a valid location and radius.</h5>  
-                              <input id="filterLatitude" class="startHidden ltlng" type="number" step="0.00001" placeholder ="Latitude" value="" />
-                              <input id="filterLongitude" class="startHidden ltlng" type="number" step="0.00001" placeholder ="Longitude" value="" />
-                              <input id="filterAddress" class="startHidden" type="text" placeHolder="Address, City, or Country" value="" />
-                              <input id="filterRadius" class="startHidden" type="number" placeholder = "Search Radius, in Miles" value="" />
-                          </fieldset>
-                      <input type="submit" value="SUBMIT OR BE DESTROYED" />
-                      <input type="reset"/> 
+                    <label>Filter Quakes by Magnitude: <input id="filterMagnitude" type="number" step="0.1" max="9" name="filterMagnitude" value="" /></label>
+                      
+                    <fieldset>  
+                        <h5>Filter Quakes by Location:</h5>
+                        <label>Using an Address<input type="radio" name="locSelect" id="selectAddress" onclick="javascript:locTypeCheck();"/></label>
+                        <label>Using Coordinates<input type="radio" name="locSelect" id="selectLatLng" onclick="javascript:locTypeCheck();"/></label>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <h5 id="formInvalMsg" class="startHidden">Please enter both a valid location and search radius.</h5>  
+                        <input id="filterLatitude" class="startHidden ltlng" type="number" step="0.00001" placeholder ="Latitude" value="" />
+                        <input id="filterLongitude" class="startHidden ltlng" type="number" step="0.00001" placeholder ="Longitude" value="" />
+                        <input id="filterAddress" class="startHidden" type="text" placeHolder="Address, City, or Country" value="" />
+                        <input id="filterRadius" class="startHidden" type="number" placeholder = "Search Radius, in Miles" value="" />
+                    </fieldset>
+                    <input type="submit" class="submitButton" value="Submit" />
+                    <input type="reset"/> 
                   </div>
               </form>
           </section>
