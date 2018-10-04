@@ -132,14 +132,12 @@ function loadQuakes() {
       marker.addListener('click', function(e) {
       });
      
-      var info= new google.maps.InfoWindow({
+      var infowindow= new google.maps.InfoWindow({
         maxWidth: 250
       });
       marker.addListener('click', function() {
-      
         infowindow.setContent(stringQuakeData(this.informationIndex));
         infowindow.open(map, this);
-
       });
 
       marker.addListener('click', function() {
