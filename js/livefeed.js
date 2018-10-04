@@ -38,6 +38,6 @@ fetch(req)
         }
         timeout = 10000;
         liveNewsFeed();
-      }, timeout *1);
+      }, timeout);
     }
   });
