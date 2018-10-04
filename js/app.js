@@ -1,6 +1,5 @@
 'use strict';
 
-
 function stringQuakeData(n){
   var latitude = JSON.stringify(earthquakeInfo.features[n].geometry.coordinates[0]);
   var longitude = JSON.stringify(earthquakeInfo.features[n].geometry.coordinates[1]);
@@ -17,6 +16,7 @@ var quakeInfo = document.getElementById('quakeData');
 var quakes = localStorage.getItem('mapQuakes');
 var earthquakeInfo = JSON.parse(quakes);
 
+
 var map;
 var geocoder;
 var gMarkers = [];
@@ -32,20 +32,29 @@ var filtLng = document.getElementById('filterLongitude');
 var filtAddr = document.getElementById('filterAddress');
 var filtRad = document.getElementById('filterRadius');
 var filtMag = document.getElementById('filterMagnitude');
+var showingFilters = false;
 
 function locTypeCheck() {
+  var addrLabel = document.getElementById('addrLabel');
+  var ltLngLabel = document.getElementById('ltLngLabel');
+
   if (document.getElementById("selectAddress").checked) {
     filtLat.style.display = "none";
     filtLng.style.display = "none";
     filtAddr.style.display="block";
     filtRad.style.display = "block";
+    addrLabel.style.backgroundColor = "white";
+    ltLngLabel.style.backgroundColor = "darkgrey";
     filtLat.value = filtLat.defaultValue;
     filtLng.value = filtLng.defaultValue;
+
   } else if (document.getElementById("selectLatLng").checked) {
     filtLat.style.display = "block";
     filtLng.style.display = "block";
     filtAddr.style.display="none";
     filtRad.style.display = "block";
+    addrLabel.style.backgroundColor = "darkgrey";
+    ltLngLabel.style.backgroundColor = "white";
     filtAddr.value = filtAddr.defaultValue;
   }
 }
@@ -146,10 +155,6 @@ function loadQuakes() {
       gMarkers.push(marker);
       marker.informationIndex = i;
 
-      // marker.addListener('click', function(e) {
-      // });
-     
-
       var infowindow = new google.maps.InfoWindow({
         maxWidth: 250
       });
@@ -181,7 +186,6 @@ function zoomAdjust() {
   }
   map.setZoom(map.getZoom() - .5);
 }
-
 
 // Returns true if magnitude filter is not set, or if marker's magnitude falls within 
 
@@ -222,16 +226,33 @@ function getIcon(magnitude) {
   };
 }
 
+function toggleFilters() {
+  event.preventDefault();
+  var toggleLabel = document.getElementById('toggleLabel');
+  if (!showingFilters) {
+    filterForm.style.display = 'block';
+    toggleLabel.textContent = '- Hide Filters';
+  } else {
+    filterForm.style.display = 'none';
+    toggleLabel.textContent = '+ Show Filters';
+  }
+  showingFilters = !showingFilters;
+}
 
 window.eqfeed_callback = function(results) { 
   if (!localStorage.getItem('mapQuakes')) {
-    console.info('no stored data. loading new data from USGS website.');
     localStorage.setItem('mapQuakes', JSON.stringify(results));
-  } else {
-    console.info('loading cached USGS data.')
-  }
+  } 
   initMap();
 }
+
+var showFilters = document.getElementById('showFilters');
+
+showFilters.addEventListener('click', toggleFilters);
+
+
+
+
 
 
 

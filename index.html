@@ -15,18 +15,19 @@
                 <h1>Earthquake Update</h1>
             </div>
            
+
             <nav class="navbar">
                 <a href="index.html">Home</a>
                 <a href="links.html">Links</a>
             </nav>
-
-     
 
         </header>
 
         <main>
 
         <section>
+            
+            <div>
             <form id="trigger-quake">
                 <h4>How many earthquakes happened in the last three weeks where you live?</h4>
                 <h4>Enter a US state or country below to find out:</h4>
@@ -46,29 +47,34 @@
                 <h2> Markers represent recent earthquakes. Click a marker to find out more about the earthquake in that location.</h2>
           
           </section>
-          <div id="map"></div>
+          
           <section>
-              <form id ="filterForm">
-                  <div>
-                    <label>Filter Quakes by Magnitude: <input id="filterMagnitude" type="number" step="0.1" max="9" name="filterMagnitude" value="" /></label>
-                      
-                    <fieldset>  
-                        <h5>Filter Quakes by Location:</h5>
-                        <label>Using an Address<input type="radio" name="locSelect" id="selectAddress" onclick="javascript:locTypeCheck();"/></label>
-                        <label>Using Coordinates<input type="radio" name="locSelect" id="selectLatLng" onclick="javascript:locTypeCheck();"/></label>
-                    </fieldset>
-                    
-                    <fieldset>
-                        <h5 id="formInvalMsg" class="startHidden">Please enter both a valid location and search radius.</h5>  
-                        <input id="filterLatitude" class="startHidden ltlng" type="number" step="0.00001" placeholder ="Latitude" value="" />
-                        <input id="filterLongitude" class="startHidden ltlng" type="number" step="0.00001" placeholder ="Longitude" value="" />
-                        <input id="filterAddress" class="startHidden" type="text" placeHolder="Address, City, or Country" value="" />
-                        <input id="filterRadius" class="startHidden" type="number" placeholder = "Search Radius, in Miles" value="" />
-                    </fieldset>
-                    <input type="submit" class="submitButton" value="Submit" />
-                    <input type="reset"/> 
-                  </div>
-              </form>
+            <div class="mapDiv">
+                <div id="map"></div>
+                <div class="filterDiv">
+                    <div id="showFilters">
+                        <h4 id="toggleLabel">+ Show Filters</h4>
+                    </div>
+                    <form id ="filterForm" class="startHidden">
+                        <label>Filter Quakes by Magnitude: <input id="filterMagnitude" type="number" step="0.1" max="9" name="filterMagnitude" value="" /></label>
+                            
+                        <fieldset>  
+                            <h5>Filter Quakes by Location:</h5>
+                            <label class="locSelect" id='addrLabel'>Using an Address<input type="radio" class="startHidden" name="locSelect" id="selectAddress" onclick="javascript:locTypeCheck();"/></label>
+                            <label class="locSelect" id='ltLngLabel'>Using Coordinates<input type="radio" class="startHidden" name="locSelect" id="selectLatLng" onclick="javascript:locTypeCheck();"/></label>
+                        </fieldset> 
+                        
+                        <fieldset>
+                            <h5 id="formInvalMsg" class="startHidden">Please enter both a valid location and search radius.</h5>  
+                            <input id="filterLatitude" class="startHidden ltlng" type="number" step="0.00001" placeholder ="Latitude" value="" />
+                            <input id="filterLongitude" class="startHidden ltlng" type="number" step="0.00001" placeholder ="Longitude" value="" />
+                            <input id="filterAddress" class="startHidden" type="text" placeHolder="Address, City, or Country" value="" />
+                            <input id="filterRadius" class="startHidden" type="number" placeholder = "Search Radius, in Miles" value="" />
+                        </fieldset>
+                        <input type="submit" class="submitButton" value="Submit" />
+                    </form>
+                </div>
+            </div>
           </section>
       </main>
       <footer>
