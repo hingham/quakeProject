@@ -33,27 +33,38 @@ html, body {
 
 
 header {
-    height: 9em;
+    height: 10em;
     padding-bottom: .75em;
 }
 
 header{
+    background-image: url(/img/earthquakegraph.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
-header, footer {
+footer {
     background-color: rgb(243, 239, 239);
 }
 
+/* header div img{
+    width: 100%;
+    position: absolute;
+} */
+
 h1 {
+    color: black;
     height: 1.5em;
-    background-image: url(/graph.png);
     font-size: 2em;
     font-weight: bold;
-    line-height: 70px;
+    margin-top: .5em;
+    line-height: 60px;
     text-align: center;
     font-size: 40px;
-    color: black;
+    z-index: 1;
 }
+
+
 
 a{
     text-decoration: none;
@@ -108,7 +119,7 @@ nav{
 
 
 header form {
-    margin: auto;
+    margin: .5em auto;
     width: 50%;
     align-content: center;
     position: relative;
@@ -181,9 +192,12 @@ fieldset {
 }
 
 input {
-    border-width: 0px;
+    border: .5px solid black;
+    border-radius: 0px;
+    height: 2em;
     margin: .5em auto .5em auto;
 }
+
 
 p{
     color: black;
