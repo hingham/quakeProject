@@ -22,8 +22,6 @@
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
-    /* animation-iteration-count: infinite;  */
-
   }
 
 html, body {
@@ -33,7 +31,7 @@ html, body {
 }
 
 header {
-    height: 6em;
+    height: 8em;
     padding-bottom: .75em;
 }
 
@@ -92,10 +90,27 @@ nav {
     color: white;
 }
 
-nav form{
-    float: right;
-    font-size: 12px;
+
+
+header form {
+    margin: auto;
+    width: 50%;
+    align-content: center;
+    position: relative;
+    bottom: 15px;
+    color: #f2f2f2;
 }
+
+
+   
+
+nav form, button{
+    font-size: 12px;
+    border-width: 0px;
+    margin-top: 1em;
+} 
+
+
 
 #userInfo {
     float: right;

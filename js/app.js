@@ -11,9 +11,6 @@ function stringQuakeData(n){
   '</div>' + 'GPS Coordinates: ' + '</div>' + '(' + latitude + ', ' + longitude + ')';
 }
 
-var body =document.getElementById('body');
-var triggerShake = document.getElementById('shake');
-var quakeInfo = document.getElementById('quakeData');
 var quakes = localStorage.getItem('mapQuakes');
 var earthquakeInfo = JSON.parse(quakes);
 
@@ -150,12 +147,4 @@ function getIcon(magnitude) {
 
 
 
-function handleClick(event){
-  event.preventDefault();
-  body.setAttribute('class', 'shake');
-}
 
-
-// triggerShake.addEventListener('click', handleClick);
-
-// handleClick();
