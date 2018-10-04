@@ -11,7 +11,6 @@ function stringQuakeData(n){
   '</div>' + 'GPS Coordinates: ' + '</div>' + '(' + latitude + ', ' + longitude + ')';
 }
 
-
 var body = document.getElementById('body');
 var triggerShake = document.getElementById('shake');
 var quakeInfo = document.getElementById('quakeData');
@@ -28,13 +27,13 @@ var searchRadius;
 
 var filterForm = document.getElementById('filterForm');
 filterForm.addEventListener('submit', changeFilters);
-
+var filtLat = document.getElementById('filterLatitude');
+var filtLng = document.getElementById('filterLongitude');
+var filtAddr = document.getElementById('filterAddress');
+var filtRad = document.getElementById('filterRadius');
+var filtMag = document.getElementById('filterMagnitude');
 
 function locTypeCheck() {
-  var filtLat = document.getElementById('filterLatitude');
-  var filtLng = document.getElementById('filterLongitude');
-  var filtAddr = document.getElementById('filterAddress');
-  var filtRad = document.getElementById('filterRadius');
   if (document.getElementById("selectAddress").checked) {
     filtLat.style.display = "none";
     filtLng.style.display = "none";
@@ -53,11 +52,13 @@ function locTypeCheck() {
 
 function changeFilters() {
   event.preventDefault();
-  var magInput = document.getElementById('filterMagnitude').value;
-  var longInput = document.getElementById('filterLongitude').value;
-  var latInput = document.getElementById('filterLatitude').value;
-  var addressInput = document.getElementById('filterAddress').value;
-  var radInput = document.getElementById('filterRadius').value;
+  var magInput = filtMag.value;
+  var longInput = filtLng.value;
+  var latInput = filtLat.value;
+  var addressInput = filtAddr.value;
+  var radInput = filtRad.value;
+  var invalMsg = document.getElementById("formInvalMsg");
+  invalMsg.style.display = 'none';
 
   if (magInput) {
     magRange[0] = parseInt(magInput, 10);
@@ -67,7 +68,6 @@ function changeFilters() {
     var loc = new google.maps.LatLng(latInput, longInput);
     console.log(loc);
     searchLocation = loc;
-    map.setZoom
     searchRadius = radInput;
     reloadMap();
     map.setCenter(loc);
@@ -87,8 +87,15 @@ function changeFilters() {
         console.log('Geocoder couldn\'t find entered address');
       }
     });
-  } else {
+  } else if (!longInput && !latInput && !radInput && !addressInput) {
     reloadMap();
+  } else {
+    filtLat.style.border = '1px solid red';
+    filtLng.style.border = '1px solid red';
+    filtRad.style.border = '1px solid red';
+    filtAddr.style.border = '1px solid red';
+    invalMsg.style.display = 'block';
+    invalMsg.style.color = 'red';
   }
   
 }
@@ -143,7 +150,7 @@ function loadQuakes() {
       });
 
       marker.addListener('click', function() {
-        map.setZoom(5);
+        zoomAdjust();
         map.setCenter(this.getPosition());
       });
     }
@@ -156,10 +163,16 @@ function setBounds() {
     bounds.extend(gMarkers[i].getPosition());
   }
   map.fitBounds(bounds);
-  if (map.getZoom() > 10) {
-    map.setZoom(10);
-  }
+  zoomAdjust();
 }
+
+function zoomAdjust() {
+  if (map.getZoom() > 12) {
+    map.setZoom(12);
+  }
+  map.setZoom(map.getZoom() - .5);
+}
+
 
 // Returns true if magnitude filter is not set, or if marker's magnitude falls within 
 
@@ -202,10 +215,11 @@ function getIcon(magnitude) {
 
 
 window.eqfeed_callback = function(results) { 
-  console.log('entered eqfeed_callback');
   if (!localStorage.getItem('mapQuakes')) {
-    console.log('no stored data');
+    console.info('no stored data. loading new data from USGS website.');
     localStorage.setItem('mapQuakes', JSON.stringify(results));
+  } else {
+    console.info('loading cached USGS data.')
   }
   initMap();
 }
