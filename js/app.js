@@ -132,7 +132,8 @@ function loadQuakes() {
       marker.addListener('click', function(e) {
       });
      
-      var infowindow= new google.maps.InfoWindow({
+
+      var infowindow = new google.maps.InfoWindow({
         maxWidth: 250
       });
       marker.addListener('click', function() {
