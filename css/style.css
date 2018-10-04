@@ -43,14 +43,11 @@ header{
     background-size: 100%;
 }
 
+
 footer {
     background-color: rgb(243, 239, 239);
 }
 
-/* header div img{
-    width: 100%;
-    position: absolute;
-} */
 
 h1 {
     color: black;
@@ -187,6 +184,14 @@ footer {
     display: none;
 }
 
+.submitButton {
+    background-color: rgb(187, 187, 187);
+}
+
+.submitButton:hover {
+    background-color: rgb(116, 116, 116);
+}
+
 fieldset {
     text-align: center;
 }
@@ -210,5 +215,6 @@ p{
 #reset-state{
     display: none;
 }
+
 
 
