@@ -33,16 +33,14 @@ html, body {
 
 
 header {
-    height: 10em;
+    height: 8em;
     padding-bottom: .75em;
 }
 
-header{
-    background-image: url(/img/earthquakegraph.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
+header div img{
+    float: left;
 
+}
 
 footer {
     background-color: rgb(243, 239, 239);
@@ -52,15 +50,13 @@ footer {
 h1 {
     color: black;
     height: 1.5em;
-    font-size: 2em;
-    font-weight: bold;
-    margin-top: .5em;
-    line-height: 60px;
-    text-align: center;
     font-size: 40px;
-    z-index: 1;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: left;
+    position: relative;
+    top: .75em;
 }
-
 
 
 a{
@@ -72,9 +68,9 @@ a:hover{
     color:  rgb(116, 116, 116);
 }
 
-p{
-    padding: .5em 3em .5em 3em;
-    text-align: center;
+p, h3{
+    padding: .5em;
+    text-align: left;
 }
 
 
@@ -82,17 +78,16 @@ h3{
     font-weight: bold; 
     padding-top: .5em;
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
 }
 
-/* nav a {
-    font-size: 20px;
-    background-color: rgb(218, 218, 218);
-    color: rgb(15, 14, 14);
-} */
+
 
 nav{
-    margin-left: 2em;
+    margin-right: 2em;
+    float: right;
+    position: relative;
+    top: -1em;
 }
 
 .navbar a {
@@ -109,19 +104,18 @@ nav{
     font-weight: bold;
 }
 
-/* .navbar a.active {
-    background-color: #4CAF50;
-    color: white;
-} */
 
 
-header form {
+#trigger-quake {
     margin: .5em auto;
-    width: 50%;
-    align-content: center;
+    width: 70%;
     position: relative;
+    float: left;
     bottom: 15px;
     color: #1a1919;
+    text-align: left;
+    top: .5em;
+
 }
  
 
@@ -140,13 +134,22 @@ nav form, button{
 
 
 #liveFeed {
-    margin: 1em 2em 1em 2em;
-    background-color: rgba(184, 215, 181, .5);
-    color: black;
+    background-color: rgba(247, 230, 174, 0.5);
+    border: 0px solid red;
+    width: 20%;
+    height: 150px;
+    overflow: hidden;
+    margin-bottom: 1em;
+    position: relative;
+    float: right;
 }
 
 #liveFeed:hover{
     text-decoration: underline;
+}
+
+#liveFeed h3{
+    color: blue;
 }
 
 section  {

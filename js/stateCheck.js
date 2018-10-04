@@ -49,28 +49,40 @@ function handleSubmit(event){
   event.preventDefault();
   var numberQuakes = 0;
   var quakeHappened = false;
+  var largestQuake = 0;
   var userState = document.getElementById('user-state').value;
   userState = userState.toLowerCase();
 
-  for (var i = 0; i<allCountries.length; i++){
-    if(states.includes(userState) || countries.includes(userState)){
-      console.log("includes place");
 
-      for (var j = 0; j < earthquakeInfo.features.length; j++){
-        var placeLowerCase = earthquakeInfo.features[j].properties.place.toLowerCase();
-        if (placeLowerCase.includes(userState)){
-          body.setAttribute('class', 'shake');
-          numberQuakes+=1;
-          quakeHappened = true;
+  if(states.includes(userState) || countries.includes(userState)){
+    console.log("includes place");
+
+    for (var j = 0; j < earthquakeInfo.features.length; j++){
+      var placeLowerCase = earthquakeInfo.features[j].properties.place.toLowerCase();
+      if (placeLowerCase.includes(userState)){
+        body.setAttribute('class', 'shake');
+        console.log(numberQuakes);
+        numberQuakes++;
+        quakeHappened = true;
+
+        var quakeMag = parseInt(earthquakeInfo.features[j].properties.mag);
+        //console.log('mag' + parseInt(earthquakeInfo.features[j].properties.mag));
+        console.log('mag' + quakeMag);
+        if(quakeMag > largestQuake){
+          largestQuake = quakeMag;
+          console.log('largest' + largestQuake);
         }
-      } 
+      }
     }
   }
+  console.log('the largest' + largestQuake);
+
   if(quakeHappened){
-  addElement('p', userState + ' has experienced ' + numberQuakes + ' earthquakes in the past 18 days.', stateForm);
-  document.getElementsByTagName('p')[0].setAttribute('id', 'quakeReport');
-  submit.style.display = 'none';
-  reset.style.display = 'inline-block';
+    var quakeContent = userState + ' has experienced ' + numberQuakes + ' earthquakes in the past 18 days.' + ' The largest of these earthquake was a magnitude ' + largestQuake +'!';
+    addElement('p', quakeContent, stateForm);
+    document.getElementsByTagName('p')[0].setAttribute('id', 'quakeReport');
+    submit.style.display = 'none';
+    reset.style.display = 'inline-block';
   }
   else{
     addElement('p', userState + ' is an invalid entry. Please try again.', stateForm);
@@ -91,6 +103,6 @@ function handleButton(event){
   reset.style.display = 'none';
 }
 
-//   removeElement('quakeReport'); 
+//   removeElement('quakeReport');
 //   body.removeAttribute('class', 'shake');
 // }
