@@ -6,7 +6,6 @@ var apiUrl = 'https://newsapi.org/v2/everything?' +
           'apiKey=cf545476892e4bbeb45ca2c5b1af080a';
 
 var req = new Request(apiUrl);
-
 var newsLink = document.getElementById('news-link');
 var newsFeed = document.getElementById('liveFeed');
 var timeout = 0;
@@ -16,7 +15,6 @@ fetch(req)
   .then( response => response.json())
   .then( data => {
     var article = data;
-
     liveNewsFeed();
     function liveNewsFeed()
     {

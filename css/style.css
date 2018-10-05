@@ -27,8 +27,6 @@ html, body {
     perspective: 1000px;
   }
 
-
-
 header {
     height: 8em;
     padding-bottom: .75em;
@@ -43,7 +41,6 @@ footer {
     background-color: rgb(243, 239, 239);
 }
 
-
 h1 {
     color: black;
     height: 1.5em;
@@ -55,30 +52,28 @@ h1 {
     top: .75em;
 }
 
-
-a{
+a {
     text-decoration: none;
     color: rgb(12, 12, 12);
 }
 
-a:hover{
+a:hover {
     color:  rgb(116, 116, 116);
 }
 
-p, h3{
+p, h3 {
     padding: .5em;
     text-align: left;
 }
 
-
-h3{ 
+h3 { 
     font-weight: bold; 
     padding-top: .5em;
     text-transform: uppercase;
     text-align: left;
 }
 
-nav{
+nav {
     margin-right: 2em;
     float: right;
     position: relative;
@@ -110,24 +105,21 @@ nav{
     margin: 0em 2em 0em 1.2em;
 }
 
-#trigger-quake p{
+#trigger-quake p {
     display: inline-block;
 }
- 
 
-nav form, button{
+nav form, button {
     font-size: 12px;
     border-width: 0px;
     margin-top: 1em;
 } 
-
 
 #userInfo {
     float: right;
     margin-left: auto;
     padding-right: 1em;
 }
-
 
 #liveFeed {
     background-color: rgba(247, 230, 174, 0.5);
@@ -141,27 +133,26 @@ nav form, button{
     width: 93%;
 }
 
-#liveFeed p, h3{
+#liveFeed p, h3 {
     width: 75%;
     margin: auto; 
     text-align: center;   
 }
 
-#liveFeed:hover{
+#liveFeed:hover {
     text-decoration: underline;
 }
 
-#liveFeed h3{
+#liveFeed h3 {
     color: blue;
 }
 
-section  {
+section {
     background-color: rgb(218, 218, 218);
     border-radius: 3px;
     margin: 0em 2em 0em 2em;
     text-align: center;
 }
-
 
 #map {
     border: 2px solid grey;
@@ -170,7 +161,7 @@ section  {
     width: 100%
 }
 
-aside{
+aside {
     font-weight: bold;
 }
 
@@ -210,30 +201,30 @@ input, .locSelect {
     display: block;
 }
 
-h4{
+h4 {
     padding-top: .5em;
 }
 
-#submit-state{
+#submit-state {
     margin: 1em 0 .5em 1em;
 }
 
-#user-state{
+#user-state {
     margin: 1em 0 2em 0em;
 }
 
-#trigger-quake p{
+#trigger-quake p {
     display: block;
     margin-bottom: .25em;
     padding-left: 0px
 }
 
-#trigger-quake input{
+#trigger-quake input {
     display: inline-block;
     margin-bottom: .5em;
 }
 
-#reset-state{
+#reset-state {
     display: none;
 }
 
@@ -250,7 +241,7 @@ h4{
     padding-top: .75em;
 }
 
-.mapDiv span{
+.mapDiv span {
     padding-bottom: .75em;
 }
 
