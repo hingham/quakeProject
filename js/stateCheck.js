@@ -50,13 +50,13 @@ function handleSubmit(event){
   var numberQuakes = 0;
   var quakeHappened = false;
   var largestQuake = 0;
+  var placeExists = false;
   var userState = document.getElementById('user-state').value;
   userState = userState.toLowerCase();
 
 
   if(states.includes(userState) || countries.includes(userState)){
-    console.log("includes place");
-
+    placeExists = true;
     for (var j = 0; j < earthquakeInfo.features.length; j++){
       var placeLowerCase = earthquakeInfo.features[j].properties.place.toLowerCase();
       if (placeLowerCase.includes(userState)){
@@ -75,18 +75,23 @@ function handleSubmit(event){
       }
     }
   }
-  console.log('the largest' + largestQuake);
 
   if(quakeHappened){
     var quakeContent = userState + ' has experienced ' + numberQuakes + ' earthquakes in the past 18 days.' + ' The largest of these earthquake was a magnitude ' + largestQuake +'!';
     addElement('p', quakeContent, stateForm);
-    document.getElementsByTagName('p')[0].setAttribute('id', 'quakeReport');
+    document.getElementsByTagName('p')[2].setAttribute('id', 'quakeReport');
+    submit.style.display = 'none';
+    reset.style.display = 'inline-block';
+  }
+  else if(placeExists && !quakeHappened){
+    addElement('p', 'No earthquakes happened in '+ userState + 'in the last 18 days', stateForm);
+    document.getElementsByTagName('p')[2].setAttribute('id', 'quakeReport');
     submit.style.display = 'none';
     reset.style.display = 'inline-block';
   }
   else{
     addElement('p', userState + ' is an invalid entry. Please try again.', stateForm);
-    document.getElementsByTagName('p')[0].setAttribute('id', 'quakeReport');
+    document.getElementsByTagName('p')[2].setAttribute('id', 'quakeReport');
     submit.style.display = 'none';
     reset.style.display = 'inline-block';
   }
@@ -103,6 +108,4 @@ function handleButton(event){
   reset.style.display = 'none';
 }
 
-//   removeElement('quakeReport');
-//   body.removeAttribute('class', 'shake');
-// }
+

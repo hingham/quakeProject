@@ -14,42 +14,23 @@
                 <img src="img/logoGraph.jpg">
                 <h1>Earthquake Update</h1>
             </div>
-           
 
             <nav class="navbar">
                 <a href="index.html">Home</a>
                 <a href="links.html">Links</a>
             </nav>
-
         </header>
 
-        <main>
-
-        <section>
+        <main> 
+            <div> 
+                    <a target="_blank" id="news-link" href=''>
+                    <div id="liveFeed"></div></a>   
+            </div>
             
-            <div>
-            <form id="trigger-quake">
-                <h4>How many earthquakes happened in the last three weeks where you live?</h4>
-                <h4>Enter a US state or country below to find out:</h4>
-                <label for="user-state"></label>
-                <input type="text" id="user-state" name="user-state" placeholder="State or Country">
-                <input id="submit-state" type="submit">
-                <button id="reset-state" type="submit">Reset</button>
-            </form>
-          <a target="_blank" id="news-link" href=''>
-            <div id="liveFeed"></div></a>    
-              
-          
-        </section>
-
-          <section class="inline">
-
-                <h2> Markers represent recent earthquakes. Click a marker to find out more about the earthquake in that location.</h2>
-          
-          </section>
-          
           <section>
             <div class="mapDiv">
+                    <!-- <p> Markers represent recent earthquakes. Click a marker to find out more about the earthquake in that location.</p> -->
+
                 <div id="map"></div>
                 <div class="filterDiv">
                     <div id="showFilters">
@@ -76,6 +57,16 @@
                 </div>
             </div>
           </section>
+
+          <section>
+            <form id="trigger-quake">
+                    <h4>How many earthquakes happened in the last three weeks where you live? <br>Enter location find out:</h4>
+                    <label for="user-state"></label>
+                    <input type="text" id="user-state" name="user-state" placeholder="State or Country">
+                    <input id="submit-state" type="submit">
+                    <button id="reset-state" type="submit">Reset</button>
+                </form>
+            </section>
       </main>
       <footer>
           &copy; 2018 Wild Quakers

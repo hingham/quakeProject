@@ -100,15 +100,17 @@ nav{
 }
 
 #trigger-quake {
-    margin: .5em auto;
-    width: 70%;
-    position: relative;
-    float: left;
+    margin: .2em auto;
+    width: 100%;
     bottom: 15px;
     color: #1a1919;
     text-align: left;
     top: .5em;
+    margin: 0em 2em 0em 2.2em;
+}
 
+#trigger-quake p{
+    display: inline-block;
 }
  
 
@@ -128,13 +130,19 @@ nav form, button{
 
 #liveFeed {
     background-color: rgba(247, 230, 174, 0.5);
-    border: 0px solid red;
-    width: 20%;
-    height: 150px;
+    box-shadow: inset 120px 0px 120px -50px white,
+              inset -120px 0px 120px -50px  white;
+    height: 80px;
     overflow: hidden;
-    margin-bottom: 1em;
     position: relative;
-    float: right;
+    margin: 1em auto 1em auto;
+    top: -3.5em;
+    width: 93%;
+}
+
+#liveFeed p, h3{
+    width: 75%;
+    margin: auto;    
 }
 
 #liveFeed:hover{
@@ -165,7 +173,6 @@ aside{
 
 form {
     text-align: center;
-    clear: both;
 }
 
 footer {
@@ -193,18 +200,31 @@ fieldset {
 }
 
 input, .locSelect {
-    display: block;
     margin: .3em auto .3em auto;
     padding: .05em;
 }
 
-
-p{
-    color: black;
+h4{
+    padding-top: .5em;
 }
 
-.quakeReport{
-    color: red;
+#submit-state{
+    margin: 1em 0 .5em 1em;
+}
+
+#user-state{
+    margin: 1em 0 2em 0em;
+}
+
+#trigger-quake p{
+    display: block;
+    margin-bottom: .25em;
+    padding-left: 0px
+}
+
+#trigger-quake input{
+    display: inline-block;
+    margin-bottom: .5em;
 }
 
 #reset-state{
@@ -219,7 +239,7 @@ p{
 
 .mapDiv {
     position: relative;
-    padding: 0 1em 0 1em;
+    top: 0 1em 0 1em;
 }
 
 .filterDiv {
