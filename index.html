@@ -10,32 +10,44 @@
     </head>
     <body id="body">
         <header>
-            <h1>Earthquake Data</h1>
+            <div>
+                <img src="img/logoGraph.jpg">
+                <h1>Earthquake Update</h1>
+            </div>
+           
+
             <nav class="navbar">
                 <a href="index.html">Home</a>
                 <a href="links.html">Links</a>
             </nav>
+
+        </header>
+
+        <main>
+
+        <section>
             
             <div>
             <form id="trigger-quake">
-                <h2>How many earthquakes happened in the last three weeks where you live?</h2>
-                <h2>Enter a US state or country below to find out:</h2>
+                <h4>How many earthquakes happened in the last three weeks where you live?</h4>
+                <h4>Enter a US state or country below to find out:</h4>
                 <label for="user-state"></label>
                 <input type="text" id="user-state" name="user-state" placeholder="State or Country">
                 <input id="submit-state" type="submit">
                 <button id="reset-state" type="submit">Reset</button>
             </form>
-            </div>
-
-        </header>
-
-        <main>
           <a target="_blank" id="news-link" href=''>
-               <div id="liveFeed"></div></a>
+            <div id="liveFeed"></div></a>    
+              
+          
+        </section>
+
           <section class="inline">
+
             <section>
                 <h2 class="mapLabel">Markers represent recent earthquakes. Click a marker to find out more about the earthquake in that location.</h2>
             </section>
+
           </section>
           
           <section>

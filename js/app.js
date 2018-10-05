@@ -75,7 +75,6 @@ function changeFilters() {
 
   if (longInput && latInput && radInput) {
     var loc = new google.maps.LatLng(latInput, longInput);
-    console.log(loc);
     searchLocation = loc;
     searchRadius = radInput;
     reloadMap();
@@ -93,7 +92,6 @@ function changeFilters() {
         map.setCenter(loc);
         return;
       } else {
-        console.log('Geocoder couldn\'t find entered address');
       }
     });
   } else if (!longInput && !latInput && !radInput && !addressInput) {
@@ -157,9 +155,6 @@ function loadQuakes() {
       gMarkers.push(marker);
       marker.informationIndex = i;
 
-      marker.addListener('click', function(e) {
-      });
-    
       var infowindow = new google.maps.InfoWindow({
         maxWidth: 250
       });
