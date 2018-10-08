@@ -35,7 +35,7 @@ Built with visual stuidos, Github, Google API, USGS GeoJSON file & newsAPI
 
 **Website Features**
 
--Earthquakes appear on map as circular markers
+*Earthquakes appear on map as circular markers*
 
 -Raidus of markers corresponds with the magnitude of the earthquake
 
