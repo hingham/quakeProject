@@ -35,15 +35,17 @@ Built with visual stuidos, Github, Google API, USGS GeoJSON file & newsAPI
 
 **Website Features**
 
-Earthquakes appear on map with markers
+-Earthquakes appear on map as circular markers
 
-Raidus of markers correspondings with the magnitude of the earthquake
+-Raidus of markers corresponds with the magnitude of the earthquake
 
-Search filters allow you to search map by magnitude, location, and radius
+-Search filters allow you to search map by magnitude, location, and radius and zoom accordingly to show earthquakes
 
-Search filters tell you how many earthquakes happened in a given location (US state or country)
+-Earthquake markers respond to click event by showing infowindow and printing information about the earthquake stored in geoJSOn file
 
-Some search filters trigger "earthquake" animation on site if function finds earthquakes in the location
+-Search filters tell you how many earthquakes happened in a given location (US state or country)
+
+-Some search filters trigger "earthquake" animation on site if function finds earthquakes in the location
 
 **Credits:**
 
