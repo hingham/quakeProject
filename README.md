@@ -29,6 +29,40 @@ query = earthquake
     
     Earthquake 3d: http://www.wolton.net/quake.html
     
+**Built with**
+
+Built with visual stuidos, Github, Google API, USGS GeoJSON file & newsAPI
+
+**Website Features**
+
+Earthquakes appear on map with markers
+
+Raidus of markers correspondings with the magnitude of the earthquake
+
+Search filters allow you to search map by magnitude, location, and radius
+
+Search filters tell you how many earthquakes happened in a given location (US state or country)
+
+Some search filters trigger "earthquake" animation on site if function finds earthquakes in the location
+
+**Credits:**
+
+Google Maps API documentation: https://developers.google.com/maps/documentation/javascript/earthquakes
+
+News API: https://newsapi.org/
+
+Stack Overflow
+
+W3 Schools (CSS shaking animation) https://www.w3schools.com/
+
+John Cocos-Code Fellows instructor
+
+Amanada Iverson--Code Fellows instructor
+
+Cat Looper--Code Fellows TA
+
+Hannah Sindorf --Code Fellows TA
+    
     
 
 
