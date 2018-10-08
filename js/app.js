@@ -38,23 +38,23 @@ function locTypeCheck() {
   var addrLabel = document.getElementById('addrLabel');
   var ltLngLabel = document.getElementById('ltLngLabel');
 
-  if (document.getElementById("selectAddress").checked) {
-    filtLat.style.display = "none";
-    filtLng.style.display = "none";
-    filtAddr.style.display="block";
-    filtRad.style.display = "block";
-    addrLabel.style.backgroundColor = "white";
-    ltLngLabel.style.backgroundColor = "darkgrey";
+  if (document.getElementById('selectAddress').checked) {
+    filtLat.style.display = 'none';
+    filtLng.style.display = 'none';
+    filtAddr.style.display='block';
+    filtRad.style.display = 'block';
+    addrLabel.style.backgroundColor = 'white';
+    ltLngLabel.style.backgroundColor = 'darkgrey';
     filtLat.value = filtLat.defaultValue;
     filtLng.value = filtLng.defaultValue;
 
-  } else if (document.getElementById("selectLatLng").checked) {
-    filtLat.style.display = "block";
-    filtLng.style.display = "block";
-    filtAddr.style.display="none";
-    filtRad.style.display = "block";
-    addrLabel.style.backgroundColor = "darkgrey";
-    ltLngLabel.style.backgroundColor = "white";
+  } else if (document.getElementById('selectLatLng').checked) {
+    filtLat.style.display = 'block';
+    filtLng.style.display = 'block';
+    filtAddr.style.display='none';
+    filtRad.style.display = 'block';
+    addrLabel.style.backgroundColor = 'darkgrey';
+    ltLngLabel.style.backgroundColor = 'white';
     filtAddr.value = filtAddr.defaultValue;
   }
 }
@@ -67,7 +67,7 @@ function changeFilters() {
   var latInput = filtLat.value;
   var addressInput = filtAddr.value;
   var radInput = filtRad.value;
-  
+
 
   if (magInput) {
     magRange[0] = parseInt(magInput, 10);
@@ -102,7 +102,7 @@ function changeFilters() {
 }
 
 function displayInval(on) {
-  var invalMsg = document.getElementById("formInvalMsg");
+  var invalMsg = document.getElementById('formInvalMsg');
   if (on) {
     filtLat.style.border = '1px solid red';
     filtLng.style.border = '1px solid red';
@@ -120,13 +120,16 @@ function displayInval(on) {
 }
 
 function initMap() {
+
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 3,
     center: new google.maps.LatLng(47.6062095,-122.3320708),
     mapTypeId: 'terrain'
-  }); 
+  });
   geocoder = new google.maps.Geocoder();
   loadQuakes();
+
+
 }
 
 function reloadMap() {
@@ -187,7 +190,6 @@ function zoomAdjust() {
   map.setZoom(map.getZoom() - .5);
 }
 
-// Returns true if magnitude filter is not set, or if marker's magnitude falls within 
 
 function filterMagnitude(quakeMag) {
   var willShow = true;
@@ -239,12 +241,12 @@ function toggleFilters() {
   showingFilters = !showingFilters;
 }
 
-window.eqfeed_callback = function(results) { 
+window.eqfeed_callback = function(results) {
   if (!localStorage.getItem('mapQuakes')) {
     localStorage.setItem('mapQuakes', JSON.stringify(results));
-  } 
+  }
   initMap();
-}
+};
 
 var showFilters = document.getElementById('showFilters');
 

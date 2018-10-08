@@ -4,6 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Raleway', sans-serif;
+    background-image: linear-gradient(to left,#667292, #36486b);
 }  
 
 @keyframes shake {
@@ -30,6 +31,8 @@ html, body {
 header {
     height: 8em;
     padding-bottom: .75em;
+    background-color: #667292;
+    color: white;
 }
 
 header div img{
@@ -50,11 +53,27 @@ h1 {
     text-align: left;
     position: relative;
     top: .75em;
+    
+}
+#earthquake-header{
+    color: white;
+    margin-left: 190px;
+}
+#logoGraph{
+    width: 100px;
+    height: 100px;
+    border-radius: 25%;
+    margin-top: 10px;
+    margin-left : 5px;
+    margin-right: 40px;
+    padding: 20px;
+    
 }
 
 a {
     text-decoration: none;
     color: rgb(12, 12, 12);
+    
 }
 
 a:hover {
@@ -81,11 +100,12 @@ nav {
 }
 
 .navbar a {
-    background-color: rgb(218, 218, 218);
+    background-color: #1a1919;
     color: #757272;
-    padding: 14px 16px;
+    padding: 14px 40px;
+    margin-left: 10px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 2em;
 }
 
 .navbar a:hover {
@@ -131,6 +151,7 @@ nav form, button {
     margin: 1em auto 0em auto;
     top: -2em;
     width: 93%;
+    z-index: 1;
 }
 
 #liveFeed p, h3 {
